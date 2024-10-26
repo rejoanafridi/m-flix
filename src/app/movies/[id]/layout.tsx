@@ -1,16 +1,8 @@
 import { getSingleDataFetcher } from '@/utils/Api'
 import { GET_MOVIE_DETAILS_BY_ID_API, ROOT_API_KEY } from '@/utils/Constant'
 import MovieDetails from './page'
-import {} from 'next/cache'
-import {} from 'next/cache'
 
-interface MovieDetailsLayoutProps {
-    params: {
-        id: string
-    }
-}
-
-const MovieDetailsLayout = async ({ params }: MovieDetailsLayoutProps) => {
+const MovieDetailsLayout = async ({ params }: any) => {
     const { id } = await params
 
     const data = await getSingleDataFetcher(

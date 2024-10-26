@@ -31,13 +31,11 @@ export const useSearchQuery = ({
 
     const searchParams = { [searchQuery]: query, size: size }
     useEffect(() => {
-        if (query) {
-            searchAction && searchAction(searchParams)
+        if (initialLoad) {
+            searchAction(searchParams)
         }
-        if (!query && initialLoad) {
-            searchAction && searchAction()
-        }
-    }, [query])
+    }, [initialLoad, searchAction, searchParams])
+
     return {
         searchInput,
         query,

@@ -59,7 +59,7 @@ const RecommendationList = ({
 )
 
 const MovieDetails = ({ data, recommendations, credits }: any) => {
-    console.log(data, 'revalidate')
+    // console.log(credits, 'revalidate')
     const { poster_path, overview, genres, release_date } = data ?? {}
     return (
         <div className="p-4 space-y-6">
@@ -83,7 +83,7 @@ const MovieDetails = ({ data, recommendations, credits }: any) => {
                 <span className="font-medium">Release date : </span>{' '}
                 {release_date}
             </p>
-            <CastList cast={credits?.cast} />
+            <CastList key={credits} cast={credits?.cast} />
             <RecommendationList recommendations={recommendations} />
         </div>
     )

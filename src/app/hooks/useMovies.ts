@@ -23,7 +23,8 @@ const useMovies = (searchQuery: string) => {
                               ? `&query=${searchQuery}&page=${page}`
                               : ''
                       }`
-                    : `${GET_ALL_POPULAR_MOVIES_API}&page=${page}`
+                    : `${GET_ALL_POPULAR_MOVIES_API}&page=${page}`,
+                { cache: 'force-cache' }
             )
             const data = await response.json()
             setMovies((prev) =>

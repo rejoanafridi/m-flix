@@ -31,7 +31,7 @@ const CastMemberCard = ({ profile }: any) => {
                 {known_for_department}
             </p>
             <div className="absolute flex p-1 items-center justify-center bg-purple-700 text-white right-3 top-3 rounded-full size-10 text-xs">
-                {popularity}
+                {popularity.toFixed(1)}
             </div>
         </div>
     )

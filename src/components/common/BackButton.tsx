@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { MdKeyboardArrowLeft } from 'react-icons/md'
 
 interface BackButtonProps {
     children?: React.ReactNode
@@ -15,7 +16,11 @@ const BackButton = ({ children, className }: BackButtonProps) => {
     return (
         <div className={className}>
             <button className="text-purple-700" onClick={handleClick}>
-                {children ?? <p>Back</p>}
+                {children ?? (
+                    <p className="flex items-center gap-1">
+                        <MdKeyboardArrowLeft className="size-6" /> Back
+                    </p>
+                )}
             </button>
         </div>
     )
